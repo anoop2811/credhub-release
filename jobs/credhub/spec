@@ -18,6 +18,9 @@ templates:
   encryption.conf.erb: config/encryption.conf
   # CAs
   database_ca.pem.erb: config/database_ca.pem
+  # BPM
+  bpm/credhub.yml.erb: config/bpm/credhub.yml
+  bin/credhub.erb: bin/credhub
 
 packages:
 - openjdk_1.8.0
@@ -27,6 +30,9 @@ packages:
 - mariadb_10.1.23
 
 properties:
+  bpm.enabled:
+    description: "Experimental: Enable BOSH Process Manager"
+    default: false
   credhub.port:
     description: "Listening port for the CredHub API"
     default: 8844
