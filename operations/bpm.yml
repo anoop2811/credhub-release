@@ -1,0 +1,15 @@
+- type: replace
+  path: /releases/-
+  value:
+    name: bpm
+    url: file:///home/pivotal/workspace/bpm-release/bpm-release.tgz
+
+- type: replace
+  path: /instance_groups/name=bosh/jobs/-
+  value:
+    name: bpm
+    release: bpm
+
+- type: replace
+  path: /instance_groups/name=bosh/jobs/name=credhub/properties/bpm?/enabled?
+  value: true

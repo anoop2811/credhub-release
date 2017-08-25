@@ -1,6 +1,6 @@
 <% if p('bpm.enabled') %>
 check process credhub
-  with pidfile /var/vcap/sys/run/bpm/credhub.pid
+  with pidfile /var/vcap/sys/run/bpm/credhub/credhub.pid
   start program "/var/vcap/packages/bpm/bin/bpm start credhub"
   stop program "/var/vcap/packages/bpm/bin/bpm stop credhub"
   group vcap
